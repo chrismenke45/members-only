@@ -1,0 +1,39 @@
+<% extend('layout') %>
+<% if (currentUser) { %>
+    <h3>Log out before creating a new user</h3>
+<% } %>
+    <form action="" method="POST">
+        <div class="formGroup">
+            <label for="username">Username:</label>
+            <input name="username" placeholder="username" type="text" value="<%= undefined==userInfo ? '' : userInfo.username
+                %>"/>
+        </div>
+        <div class="formGroup">
+            <label for="first_name">First Name:</label>
+            <input name="first_name" placeholder="First Name" type="text" value="<%= undefined===userInfo ? '' :
+                userInfo.first_name %>"/>
+        </div>
+        <div class="formGroup">
+            <label for="family_name">Family Name:</label>
+            <input name="family_name" placeholder="Family Name" type="text" value="<%= undefined===userInfo ? '' :
+                userInfo.family_name %>"/>
+        </div>
+        <div class="formGroup">
+            <label for="password">Password:</label>
+            <input name="password" type="password" />
+        </div>
+        <div class="formGroup">
+            <label for="confirm_password">Confirm Password:</label>
+            <input name="confirm_password" type="password" />
+        </div>
+        <button>Sign Up</button>
+    </form>
+    <% if (errors) { %>
+        <ul>
+            <% errors.map((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>

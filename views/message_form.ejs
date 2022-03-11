@@ -1,0 +1,25 @@
+<% extend('layout') %>
+<% if (!currentUser) { %>
+    <h1>Sign in to post a message</h1>
+ <% } else { %>
+<form action="" method="POST">
+    <div class="formGroup">
+        <label for="title">Title:</label>
+        <input type="text" name="title" maxlength="100" placeholder="<%= message ? message.title : 'Title' %>">
+    </div>
+    <div class="formGroup">
+        <label for="text">Message:</label>
+        <textarea type="textarea" name="text" maxlength="1000" placeholder="Message"><%= message ? message.text : '' %></textarea>
+    </div>
+    <input hidden="true" name="userId" value="<%= currentUser._id%>">
+    <button type="submit" >Post Message</button>
+</form>
+<% if (errors) { %>
+    <ul>
+        <% errors.map((error)=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }) %>
+    </ul>
+    <% }} %>

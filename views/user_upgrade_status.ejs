@@ -1,0 +1,22 @@
+<% extend('layout') %>
+<% if (!currentUser) { %>
+    <h3>you need to log in to upgrade your membership</h3>
+<% } else { %>
+    <form action="" method="POST">
+        <div class="formGroup">
+            <label for="upgradeCode">User Upgrade Code:</label>
+            <input name="upgradeCode" placeholder="****" type="number"/>
+        </div>
+        <button>Upgrade Membership</button>
+    </form>
+    <p>code is 1234 for membership and 0987 to become an admin</p>
+    <% } %>
+    <% if (errors) { %>
+        <ul>
+            <% errors.map((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>

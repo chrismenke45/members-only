@@ -1,0 +1,21 @@
+<% extend('layout') %>
+    <form action="" method="POST">
+        <div class="formGroup">
+            <label for="username">Username:</label>
+            <input name="username" placeholder="username" type="text"/>
+        </div>
+        <div class="formGroup">
+            <label for="password">Password:</label>
+            <input name="password" type="password" />
+        </div>
+        <button>Log in</button>
+    </form>
+    <% if (errors) { %>
+        <ul>
+            <% errors.map((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>

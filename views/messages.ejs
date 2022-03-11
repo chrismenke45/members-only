@@ -1,0 +1,25 @@
+<% extend('layout') %>
+    <% if (currentUser) { %>
+        <h5>Welcome <%= currentUser.fullname %>
+        </h5>
+        <% } %>
+            <dl>
+                <% message_list.map(message=> { %>
+                    <% if (currentUser && currentUser.admin) { %>
+                    <a href="/messages/<%= message._id %>/delete"><i class="fa-solid fa-circle-xmark"></i></a>
+                    <% } %>
+                    <dt>
+                        <%= message.title %>
+                    </dt>
+                    <dd>
+                        <%= message.text %>
+                    </dd>
+                    <% if (currentUser && currentUser.member) { %>
+                    <dd>
+                        <%= message.user.fullname %>
+                    </dd>
+                    <dd>
+                        <%= message.postTime %>
+                    </dd>
+                    <% }}) %>
+            </dl>
