@@ -1,5 +1,6 @@
 <% extend('layout') %>
-    <form action="" method="POST">
+<h2> <%- title %></h2>
+    <form action="" method="POST"  class="centerAlignContent">
         <div class="formGroup">
             <label for="username">Username:</label>
             <input name="username" placeholder="username" type="text"/>
@@ -8,7 +9,7 @@
             <label for="password">Password:</label>
             <input name="password" type="password" />
         </div>
-        <button>Log in</button>
+        <button type="submit">Log in</button>
     </form>
     <% if (errors) { %>
         <ul>

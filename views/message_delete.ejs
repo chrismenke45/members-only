@@ -2,20 +2,22 @@
     <% if (!currentUser.admin) { %>
         <h3>Only Admins can delete messages!</h3>
         <% } else {%>
-            <dl>
-                <dt>
-                    <%= message.title %>
-                </dt>
-                <dd>
-                    <%= message.text %>
-                </dd>
-                <dd>
-                    <%= message.user.fullname %>
-                </dd>
-                <dd>
-                    <%= message.postTime %>
-                </dd>
-            </dl>
+            <div class="individualMessage">
+                <div class="messageHeader">
+                </div>
+                <p>
+                    <%- message.text %>
+                </p>
+                <div class="messageFooter">
+                    <p>
+                        <%- message.user.username %>
+                    </p>
+                    <time class="greenText">
+                        <%- message.postTime %>
+                    </time>
+                </div>
+                <hr class="greyText">
+            </div>
             <form action="" method="Post">
                 <input type="text" hidden="true" value="<%= message._id %>">
                 <button type="submit">Delete</button>

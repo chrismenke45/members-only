@@ -1,9 +1,123 @@
-
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+  margin: 0;
+  padding: 0;
+  --yikGreen: #5ed4b5;
+  --yikWhite: #fefcff;
+  --yikGrey: #8c9ea4;
+  color: black;
 }
+html {
+  background: var(--yikGreen);
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 
+}
+.greenText {
+  color: var(--yikGreen);
+}
+.whiteText {
+  color: var(--yikWhite);
+}
+.greyText {
+  color: var(--yikGrey);
+}
+.greenBackground {
+  background: var(--yikGreen);
+}
+.whiteBackground {
+  background: var(--yikWhite);
+}
 a {
   color: #00B7FF;
 }
+header {
+  background-color: var(--yikGreen);
+}
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+
+}
+nav > ul > li > a {
+  text-decoration: none;
+  color: var(--yikWhite)
+}
+main {
+  max-width: 90%;
+  margin: auto;
+}
+.messageHeader > h4 {
+  margin: 0 0 0 10px;
+}
+.individualMessage {
+  background: var(--yikWhite);
+  max-width: 99%;
+  width: 300px;
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+.alignRight {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.alignCenter {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+.messageFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-style: italic;
+}
+hr.greyText {
+  border: .2px solid var(--yikGrey);
+  width: 100%;
+  opacity: .5;
+}
+button[type="submit"] {
+  color: var(--yikGreen);
+  background-color: var(--yikWhite);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  width: 100px;
+  margin: 5px;
+  cursor: pointer;
+}
+input[type="text"], input[type="password"], input[type="number"], textarea {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--yikWhite);
+  color: var(--yikGreen);
+  resize: none;
+  outline: none;
+}
+.centerAlignContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formGroup {
+  width: 100%;
+}
+.formGroup > input {
+  width: 100%;
+}
+
