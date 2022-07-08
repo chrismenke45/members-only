@@ -18,7 +18,9 @@ MessageSchema
 MessageSchema
 .virtual('postTime')
 .get(function () {
-    return DateTime.fromJSDate(this.timestamp).toLocaleString(DateTime.DATETIME_SHORT,'en-US', {timeZone: 'America/Los_Angeles'})
+  console.log(typeof this.timestamp)
+  return this.timestamp.toLocaleString('en-US', {timeZone: 'America/Los_Angeles', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'})
+    //return DateTime.fromJSDate(this.timestamp).toLocaleString(DateTime.DATETIME_SHORT,'en-US', {timeZone: 'America/New York'})
 })
 
 module.exports = mongoose.model('Message', MessageSchema);
